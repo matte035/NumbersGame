@@ -15,7 +15,7 @@ namespace NumbersGame
 
 
 
-            for (int i = 0; i < antal; i++)
+            for (int i = 0; i <antal; i++)
             {
 
                 answer = int.Parse(Console.ReadLine());
@@ -34,10 +34,11 @@ namespace NumbersGame
                     Console.WriteLine("Tyvärr du gissade för högt!");
                 }
 
-                if  (i >= answer)
+                if  (i >= answer) 
                 {
+                    
                     CheckGuess();
-
+                    
                 }
 
                 if (antal < 5)
@@ -56,7 +57,7 @@ namespace NumbersGame
             int GuessCount = 0;
             if (GuessCount == 5)
             {
-               
+                
                 Console.ReadLine();
             }
 
