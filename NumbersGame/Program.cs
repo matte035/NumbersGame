@@ -7,15 +7,17 @@ namespace NumbersGame
         static void Main(string[] args)
         {
             Random random = new Random();
-            int number = random.Next(1, 10);
+            int number = random.Next(1, 21);
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök");
             int answer;
-            Program P = new Program();
-            int guess = P.CheckGuess;
+            int antal = 5;
 
 
-            for (int i = 0; i < 5; i++)
+
+
+            for (int i = 0; i < antal; i++)
             {
+
                 answer = int.Parse(Console.ReadLine());
                 if (answer == number)
                 {
@@ -32,21 +34,32 @@ namespace NumbersGame
                     Console.WriteLine("Tyvärr du gissade för högt!");
                 }
 
-                if (i >= answer)
+                if  (i >= answer)
                 {
-                    Console.WriteLine("Tyvärr du har gissat fel för många gånger");
-                    
+                    CheckGuess();
+
                 }
 
+                if (antal < 5)
+                {
+                    Console.WriteLine();
+                }
 
             }
 
 
 
         }
-        static int CheckGuess(int guess)
+        static void CheckGuess()
+
         {
-            Console.WriteLine("Du har gisssat"+ guess ++);
+            int GuessCount = 0;
+            if (GuessCount == 5)
+            {
+               
+                Console.ReadLine();
+            }
+
         }
 
     }
