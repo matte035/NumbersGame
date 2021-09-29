@@ -11,9 +11,7 @@ namespace NumbersGame
             Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök");
             int answer;
             int antal = 5;
-
-
-
+            
 
             for (int i = 0; i <antal; i++)
             {
@@ -22,6 +20,7 @@ namespace NumbersGame
                 if (answer == number)
                 {
                     Console.WriteLine("Grattis du har svarat rätt! :)");
+                    return;
 
                 }
                 else if (answer < number)
@@ -33,19 +32,17 @@ namespace NumbersGame
                 {
                     Console.WriteLine("Tyvärr du gissade för högt!");
                 }
-
-                if  (i >= answer) 
+                Console.WriteLine("Du har gissat "+ (i+1)+" gånger");
+                if  (i >= antal -1) 
+                
                 {
-                    
+                    Console.WriteLine("Tyvärr du lyckades inte gissa talet på fem försök!");
                     CheckGuess();
-                    
+                    return;
                 }
 
-                if (antal < 5)
-                {
-                    Console.WriteLine();
-                }
 
+                
             }
 
 
@@ -54,8 +51,9 @@ namespace NumbersGame
         static void CheckGuess()
 
         {
-            int GuessCount = 0;
-            if (GuessCount == 5)
+            int guessCount = 0;
+            if (guessCount == 5)
+            
             {
                 
                 Console.ReadLine();
